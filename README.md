@@ -64,7 +64,7 @@ docker-compose up -d
 Visit http://localhost:8080 once all containers are up and running.
 
 ## Configuring Connections in the Airflow Web Server UI
-![Airflow Web Server UI. Credentials: `airflow`/`airflow`.](assets/login.png)
+![Airflow Web Server UI. Credentials: `airflow`/`airflow`.](screenshots/login.png)
 
 On the Airflow web server UI, use `airflow` for both username and password.
 * Post-login, navigate to **Admin > Connections** to add required connections - specifically, `aws_credentials` and `redshift`.
@@ -78,7 +78,7 @@ On the Airflow web server UI, use `airflow` for both username and password.
    * A **helper class** for SQL transformations.
 
 1. With these template files, you should see the new DAG in the Airflow UI, with a graph view resembling the screenshot below:
-![Project DAG in the Airflow UI](assets/final_project_dag_graph1.png)
+![Project DAG in the Airflow UI](screenshots/final_project_dag_graph1.png)
 You should be able to execute the DAG successfully, but if you check the logs, you will see only `operator not implemented` messages.
 
 ## DAG Configuration
@@ -90,7 +90,7 @@ In the DAG, add `default parameters` based on these guidelines:
 * No email on retry.
 
 Additionally, configure task dependencies to match the flow depicted in the image below:
-![Working DAG with correct task dependencies](assets/final_project_dag_graph2.png)
+![Working DAG with correct task dependencies](screenshots/final_project_dag_graph2.png)
 
 ## Developing Operators
 To complete the project, build four operators for staging data, transforming data, and performing data quality checks. While you can reuse code from Project 2, leverage Airflow's built-in functionalities like connections and hooks whenever possible to let Airflow handle the heavy lifting.
